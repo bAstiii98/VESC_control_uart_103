@@ -59,14 +59,7 @@ void Error_Handler(void);
 
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
-typedef struct{
-	uint8_t S;
-	uint8_t length;
-	uint8_t payload;
-	uint8_t data;
-	uint16_t Crc;
-	uint8_t ST;
-} mess;
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

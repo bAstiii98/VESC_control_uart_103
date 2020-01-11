@@ -31,3 +31,5 @@ vesc_control_uart_103\main.o: ../Inc/usart.h
 vesc_control_uart_103\main.o: ../Inc/gpio.h
 vesc_control_uart_103\main.o: ../Inc/Crc_my.h
 vesc_control_uart_103\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+vesc_control_uart_103\main.o: ../Inc/datatypes.h
+vesc_control_uart_103\main.o: ../Inc/buffer.h

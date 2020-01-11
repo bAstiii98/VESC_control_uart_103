@@ -28,6 +28,9 @@
 /* USER CODE BEGIN Includes */
 #include "Crc_my.h"
 #include "string.h"
+#include "datatypes.h" 
+#include "buffer.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,7 +68,7 @@ extern uint8_t data_in;
  uint8_t dr_dt[2];
  extern uint8_t uart2_in;
  extern uint8_t dt[1];
- uint8_t buffer[7];
+ uint8_t buffer[8];
 /* USER CODE END 0 */
 
 /**
@@ -103,11 +106,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	 __HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
 	 
-	
-	 message.S = 2;
-	 message.length = 2;
-	 message.ST = 3;
-  /* USER CODE END 2 */
+	uint8_t lenght;
+	  /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -116,30 +116,38 @@ int main(void)
 		if(data_in)
 		{		
 			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
-			message.payload = 0;
-			if(data_in == 1)
-				message.payload = dr_arr[0] - '0';
-			else if(data_in == 2)
-				message .payload = (dr_arr[0] - '0') * 10 + (dr_arr[1] - '0');
-			data_in = 0;
-			if(dr_dt[0] == 0)
-				message.data = 0;
-			else
-			message.data = (dr_dt[0] - '0') * 10;
-if(dr_dt[1] != 0)
-message.data += (dr_dt[1] - '0');
+						
+			if(data_in)
+			{
+				data_in = 0;
+				lenght = read_buf();
+				
+				HAL_UART_Transmit_IT(&huart2, buffer, lenght);
+			HAL_UART_Transmit_IT(&huart1, buffer, lenght);
+					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
+			}
+//				message.payload = dr_arr[0] - '0';
+//			else if(data_in == 2)
+//				message .payload = (dr_arr[0] - '0') * 10 + (dr_arr[1] - '0');
+//			data_in = 0;
+//			if(dr_dt[0] == 0)
+//				message.data = 0;
+//			else
+//			message.data = (dr_dt[0] - '0') * 10;
+//if(dr_dt[1] != 0)
+//message.data += (dr_dt[1] - '0');
 
-			message.Crc = crc16(&message.payload, 2);
+//			message.Crc = crc16(&message.payload, 2);
 
-buffer[0] = message.S;
-buffer[1] = message.length;
-buffer[2] = message.payload;
-buffer[3] = message.data;
-buffer[4] = message.Crc >> 8;
-buffer[5] = message.Crc;
-buffer[6] = message.ST;
-			HAL_UART_Transmit_IT(&huart2, buffer, 7);
-			HAL_UART_Transmit_IT(&huart1, buffer, 7);
+//buffer[0] = message.S;
+//buffer[1] = message.length;
+//buffer[2] = message.payload;
+//buffer[3] = message.data;
+//buffer[4] = message.Crc >> 8;
+//buffer[5] = message.Crc;
+//buffer[6] = message.ST;
+//			HAL_UART_Transmit_IT(&huart2, buffer, 7);
+//			HAL_UART_Transmit_IT(&huart1, buffer, 7);
 
 		}
 	if(uart2_in)

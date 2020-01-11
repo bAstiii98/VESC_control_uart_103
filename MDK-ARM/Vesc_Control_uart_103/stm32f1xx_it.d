@@ -27,3 +27,5 @@ vesc_control_uart_103\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f
 vesc_control_uart_103\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 vesc_control_uart_103\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 vesc_control_uart_103\stm32f1xx_it.o: ../Inc/stm32f1xx_it.h
+vesc_control_uart_103\stm32f1xx_it.o: ../Inc/buffer.h
+vesc_control_uart_103\stm32f1xx_it.o: ../Inc/datatypes.h

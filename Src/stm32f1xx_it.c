@@ -23,6 +23,8 @@
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "buffer.h"
+#include "datatypes.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,6 +52,8 @@ uint8_t stage = 0;
 uint8_t ind;
 uint8_t uart2_in;
 uint8_t dt[1];
+uint8_t prev;
+int8_t byte_cnt = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -212,49 +216,74 @@ void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
 if(USART1->SR & USART_SR_RXNE)
-{
-	switch(stage)
+{	
+	if(byte_cnt > 0)
 	{
-		case 0:
-	if(USART1->DR == 0x31)
-dr_arr[0] = USART1->DR;
-	else if(USART1->DR == 0x32)
+		InBuffer(USART1->DR);
+		byte_cnt--;
+	}
+	if(!byte_cnt && stage)
 	{
-		dr_arr[1] = USART1->DR;
-		dr_dt[1] = 0;
-	stage = 1;
-		ind = 0;
+		data_in = 1;
+		stage = 0;
 	}
-	else if(USART1->DR == 0x39)
+	if(prev == 0xAA)
+	{		
+		prev = USART1->DR;
+		byte_cnt = prev;
+		InBuffer(prev);
+stage = 1;		
+	}
+		
+	if(USART1->DR == 0xAA)
 	{
-		dr_arr[0] = USART1->DR;
-		dr_dt[1] = 0;
-		stage = 1;
-		ind = 0;
+	prev = USART1->DR;
+		InBuffer(prev);			
 	}
-	else if(USART1->DR == 0x36)
-	{
-		dr_arr[0] = USART1->DR;
-		stage = 1;
-		dr_dt[1] = 0;
-		ind = 0;
-	}
-	break;
-		case 1:
-			
-		dr_dt[ind++] = USART1->DR;
-		if(ind >= 2)
-		{
-			stage = 0;
-			if(dr_arr[1] == 0x32)
-				data_in = 2;
-			else
-				data_in = 1;
-	}
-		break;
-	default:
-		break;
-}
+	
+	
+//	switch(stage)
+//	{
+//		case 0:
+//	if(USART1->DR == 0x31)
+//dr_arr[0] = USART1->DR;
+//	else if(USART1->DR == 0x32)
+//	{
+//		dr_arr[1] = USART1->DR;
+//		dr_dt[1] = 0;
+//	stage = 1;
+//		ind = 0;
+//	}
+//	else if(USART1->DR == 0x39)
+//	{
+//		dr_arr[0] = USART1->DR;
+//		dr_dt[1] = 0;
+//		stage = 1;
+//		ind = 0;
+//	}
+//	else if(USART1->DR == 0x36)
+//	{
+//		dr_arr[0] = USART1->DR;
+//		stage = 1;
+//		dr_dt[1] = 0;
+//		ind = 0;
+//	}
+//	break;
+//		case 1:
+//			
+//		dr_dt[ind++] = USART1->DR;
+//		if(ind >= 2)
+//		{
+//			stage = 0;
+//			if(dr_arr[1] == 0x32)
+//				data_in = 2;
+//			else
+//				data_in = 1;
+//	}
+//		break;
+//	default:
+//		break;
+//}
 }
   /* USER CODE END USART1_IRQn 0 */
   HAL_UART_IRQHandler(&huart1);

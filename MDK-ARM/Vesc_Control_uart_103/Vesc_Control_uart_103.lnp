@@ -8,6 +8,7 @@
 "vesc_control_uart_103\usart.o"
 "vesc_control_uart_103\stm32f1xx_it.o"
 "vesc_control_uart_103\stm32f1xx_hal_msp.o"
+"vesc_control_uart_103\buffer.o"
 "vesc_control_uart_103\stm32f1xx_hal_gpio_ex.o"
 "vesc_control_uart_103\stm32f1xx_hal_crc.o"
 "vesc_control_uart_103\stm32f1xx_hal.o"
