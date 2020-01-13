@@ -5,7 +5,7 @@ double term_buf[BUFFER_SIZE];		/**< fifo buffer for roll data. */
 volatile uint8_t tail_t;					/**< index for writing to buffer. */
 volatile uint8_t head_t;					/**< index for reading from buffer. */
 
-extern uint8_t buffer[8];
+extern uint8_t buffer[16];
 
 /**
   * @brief  Function adds data to the buffer.

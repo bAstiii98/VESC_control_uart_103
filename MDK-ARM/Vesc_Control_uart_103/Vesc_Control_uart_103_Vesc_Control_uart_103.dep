@@ -29,7 +29,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5DA58594)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5DA58594)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5DA58594)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5DA58594)
-F (../Src/main.c)(0x5E19E4BB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Vesc_Control_uart_103-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o vesc_control_uart_103\main.o --omf_browse vesc_control_uart_103\main.crf --depend vesc_control_uart_103\main.d)
+F (../Src/main.c)(0x5E1C4C9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Vesc_Control_uart_103-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o vesc_control_uart_103\main.o --omf_browse vesc_control_uart_103\main.crf --depend vesc_control_uart_103\main.d)
 I (../Inc/main.h)(0x5E1848EC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5DA58594)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5E16FFD5)
@@ -61,8 +61,8 @@ I (../Inc/usart.h)(0x5E16FFD5)
 I (../Inc/gpio.h)(0x5E16FFD4)
 I (../Inc/Crc_my.h)(0x5E15EFEC)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599F2F9C)
-I (../Inc/datatypes.h)(0x5E1848EC)
-I (../Inc/buffer.h)(0x5E19E3FD)
+I (../Inc/datatypes.h)(0x5E1C7141)
+I (../Inc/buffer.h)(0x5E1C7110)
 F (../Src/gpio.c)(0x5E16FFD4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Vesc_Control_uart_103-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o vesc_control_uart_103\gpio.o --omf_browse vesc_control_uart_103\gpio.crf --depend vesc_control_uart_103\gpio.d)
 I (../Inc/gpio.h)(0x5E16FFD4)
 I (../Inc/main.h)(0x5E1848EC)
@@ -203,8 +203,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5DA58594)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5DA58594)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5DA58594)
 I (../Inc/stm32f1xx_it.h)(0x5E16FFD5)
-I (../Inc/buffer.h)(0x5E19E3FD)
-I (../Inc/datatypes.h)(0x5E1848EC)
+I (../Inc/buffer.h)(0x5E1C7110)
+I (../Inc/datatypes.h)(0x5E1C7141)
 F (../Src/stm32f1xx_hal_msp.c)(0x5E16FFD5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Vesc_Control_uart_103-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o vesc_control_uart_103\stm32f1xx_hal_msp.o --omf_browse vesc_control_uart_103\stm32f1xx_hal_msp.crf --depend vesc_control_uart_103\stm32f1xx_hal_msp.d)
 I (../Inc/main.h)(0x5E1848EC)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5DA58594)
@@ -232,8 +232,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5DA58594)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5DA58594)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5DA58594)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5DA58594)
-F (..\Src\buffer.c)(0x5E19E3FD)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Vesc_Control_uart_103-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o vesc_control_uart_103\buffer.o --omf_browse vesc_control_uart_103\buffer.crf --depend vesc_control_uart_103\buffer.d)
-I (../Inc/buffer.h)(0x5E19E3FD)
+F (..\Src\buffer.c)(0x5E1C4C9A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Vesc_Control_uart_103-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o vesc_control_uart_103\buffer.o --omf_browse vesc_control_uart_103\buffer.crf --depend vesc_control_uart_103\buffer.d)
+I (../Inc/buffer.h)(0x5E1C7110)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F2F9E)
 I (../Inc/Crc_my.h)(0x5E15EFEC)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x5DA58594)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Vesc_Control_uart_103-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o vesc_control_uart_103\stm32f1xx_hal_gpio_ex.o --omf_browse vesc_control_uart_103\stm32f1xx_hal_gpio_ex.crf --depend vesc_control_uart_103\stm32f1xx_hal_gpio_ex.d)
